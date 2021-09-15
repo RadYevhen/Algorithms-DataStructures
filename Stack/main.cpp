@@ -57,7 +57,6 @@ int main()
     double d4 = EvaluateExpression(exp4); // 323*- = -3
     cout << d4 << endl;
 
-
     return 0;
 }
 
@@ -152,7 +151,8 @@ string ExpressionToPostfix(const string &exp)
     {
         if(isdigit(exp[i]))
         {
-            res += exp[i]; // potential place for improve because each operation copy full string and add new character for O(N) where N - length of string
+            // res += exp[i]; // potential place for improve because each operation copy full string and add new character for O(N) where N - length of string
+            res.push_back(exp[i]); // Better - constant time
         }
         else if (exp[i] == '+' || exp[i] == '-' || exp[i] == '*' || exp[i] == '/' || exp[i] == '(')
         {
@@ -173,7 +173,8 @@ string ExpressionToPostfix(const string &exp)
             {
                 char c = symbols->GetTop();
                 symbols->Pop();
-                res += c; // potential place for improve because each operation copy full string and add new character for O(N) where N - length of string
+                // res += c; // potential place for improve because each operation copy full string and add new character for O(N) where N - length of string
+                res.push_back(c); // Better - constant time
             }
             // Pop '('
             symbols->Pop();
