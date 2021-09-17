@@ -93,7 +93,7 @@ void Queue<T>::Print()
 }
 
 template <class T>
-void Queue<T>::Print(const typename Queue<T>::Node* node)
+void Queue<T>::Print(const Node* node)
 {
     if(node == nullptr){return;}
     Print(node->next);

@@ -15,7 +15,7 @@ class Queue
         Node* head;
         Node* tail;
 
-        void Print(const typename Queue<T>::Node* node);
+        void Print(const Node* node);
 
     public:
         Queue();
